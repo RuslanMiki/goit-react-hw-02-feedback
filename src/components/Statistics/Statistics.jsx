@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import Notification from '../Notification';
-import styles from './Statistics.module.scss'
+import Notification from '../Notification/';
+import styles from './Statistics.module.scss';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   const totalFeedback = total();
-const positivePercentage();
-return (
-     <div>
+  const positiveValue = positivePercentage();
+  return (
+    <div>
       {!!totalFeedback ? (
         <ul>
           <li className={styles.item}>
@@ -43,13 +43,12 @@ return (
   );
 };
 
-
 export default Statistics;
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired,
+  total: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.func.isRequired,
 };

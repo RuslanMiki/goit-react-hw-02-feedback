@@ -1,7 +1,7 @@
-import { Component } from 'react';
-import Section from 'components/Section';
-import FedbackOptions from 'components/FedbackOptions';
-import Statistics from 'components/Statistics';
+import React, { Component } from 'react';
+import Section from './components/Section';
+import FedbackOptions from './components/FedbackOptions';
+import Statistics from './components/Statistics';
 
 class App extends Component {
   state = {
