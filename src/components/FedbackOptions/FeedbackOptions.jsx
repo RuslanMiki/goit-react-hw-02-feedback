@@ -10,7 +10,10 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             <button
               className={styles.button}
               type="button"
-              onClick={onLeaveFeedback}
+              onClick={event => {
+                const label = event.target.textContent;
+                onLeaveFeedback(label);
+              }}
             >
               {btnName}
             </button>
